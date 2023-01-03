@@ -1,4 +1,4 @@
-import page from "../../node_modules/page/page.mjs";
+import page from "//unpkg.com/page/page.mjs";
 import { getNearCity } from "../api/data.js";
 
 

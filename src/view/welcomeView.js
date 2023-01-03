@@ -1,5 +1,4 @@
-
-import {html} from "../../node_modules/lit-html/lit-html.js";
+import { html } from 'https://unpkg.com/lit-html@0.7.1/lit-html.js'
 
 
 export async function welcomeView(ctx) {

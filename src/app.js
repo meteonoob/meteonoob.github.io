@@ -1,13 +1,13 @@
 
 
 
-import page from "../node_modules/page/page.mjs";
+import page from "//unpkg.com/page/page.mjs";
 
 import { errorCallback, successCallback } from "./api/geoLocation.js";
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 
-import { render} from "../node_modules/lit-html/lit-html.js";
+import { render } from 'https://unpkg.com/lit-html@0.7.1/lit-html.js'
 import { homeView } from "./view/home.js";
 import { cityView} from "./view/cityView.js";
 import {  showOptions } from "./view/datalist.js";

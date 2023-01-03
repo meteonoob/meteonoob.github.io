@@ -1,4 +1,5 @@
-import { html, render } from "../../node_modules/lit-html/lit-html.js";
+
+import { html, render } from 'https://unpkg.com/lit-html@0.7.1/lit-html.js'
 import { getCity } from "../api/data.js";
 
 
