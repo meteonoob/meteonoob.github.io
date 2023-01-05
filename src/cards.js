@@ -85,7 +85,7 @@ export function cardTemplate(obj, unit){
                  <span class="max">${Math.round(obj.min)}/${Math.round(obj.max)}${unit}</span>
             </p>
             <p class="meteo">${meteoEnum[`${obj.code}`]}</p>
-</div>`
+         </div>`
 }
 
 export function homeTemplate(todayInfo, daysInfo, unit) {
@@ -96,10 +96,7 @@ export function homeTemplate(todayInfo, daysInfo, unit) {
   </div>
   
   <div id="dashboard">
-
-      <div class="card-wrapper">
           ${daysInfo.map(day => day = cardTemplate(day, unit))}
-      </div>
   </div>
   
   `
