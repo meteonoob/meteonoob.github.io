@@ -59,24 +59,19 @@
 
 }
 
-#dashboard {
 
-    float: right;
-    margin-right: 10px;
-    margin-left: auto;
-    display: inline-flex;
-    margin-top: 0%;
-   
-  
-  }
   
   body {
+
+    background-color:black;
   
     background-image: url("../images/wallpaperRainbow.jpg");
-  
-    background-position: center;
+    background-position-y:top;
+
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
+
   }
   
   
@@ -107,12 +102,41 @@
     font-stretch: condensed;
   }
   
+
+  
+  #today{
+    height:min-content;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+  }
+
+  #dashboard {
+
+    float: right;
+    margin-right: 10px;
+    margin-top: 0%;
+    max-width: 550px;
+    align-items:center;
+   
+  
+  }
+  
+  .card-wrapper {
+    display: block;
+    margin-top: 20px;
+  
+  }
+
   .card {
   
     padding: 10px;
     margin: 10px;
     margin-top: 0px;
     width: 500px; 
+    max-width: 540px;
     height: min-content; 
     
     color: rgb(255, 255, 255);
@@ -125,21 +149,6 @@
   }
   
   
-  
-  #today{
-    height:min-content;
-    float: left;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-  }
-  
-  .card-wrapper {
-    display: block;
-    margin-top: 20px;
-  
-  }
   
   .card img {
     border: #f0f7f3;

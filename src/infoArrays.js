@@ -41,7 +41,7 @@ export function today(data){
         hoursInfo.push(hour);
     }
 
-
+console.log(hoursInfo);
     return hoursInfo
 }
 
@@ -59,6 +59,7 @@ export function week(data){
         daysInfo.push(day);
     }
 
+    console.log(daysInfo)
    
     return daysInfo
 }
