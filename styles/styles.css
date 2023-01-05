@@ -12,8 +12,10 @@
   
     background-image: url("../images/wallpaperRainbow.jpg");
     background-position-y:top;
-    background-position-x:right;
+    background-position-x:center;
 
+
+    display: block;
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,7 +68,7 @@
     margin-left: 10px;
     margin-top: 0%;
     max-width: 550px;
-    align-items:center;
+    /* align-items:center; */
    
   
   }
