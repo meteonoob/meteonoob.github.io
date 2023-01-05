@@ -95,12 +95,12 @@ export function homeTemplate(todayInfo, daysInfo, unit) {
        ${todayCardTemplate(todayInfo, unit)}
   </div>
   
-  <section id="dashboard">
+  <div id="dashboard">
 
       <div class="card-wrapper">
           ${daysInfo.map(day => day = cardTemplate(day, unit))}
       </div>
-  </section>
+  </div>
   
   `
 }
