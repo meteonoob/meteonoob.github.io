@@ -1,7 +1,7 @@
 
 import { get7Days, getCity } from "../api/data.js";
 import { homeTemplate } from "../cards.js";
-import { today, week } from "../infoArrays.js";
+import { infoFunc } from "../infoArrays.js";
 
 
 export async function cityView(ctx){
@@ -23,12 +23,14 @@ export async function cityView(ctx){
     const unit = data.hourly_units.temperature_2m;
  
     
-    const weekInfo = week(data);
-    const todayInfo = today(data);
+  
+    const info = infoFunc(data);
+    console.log(info)
+    
 
 
 
-    ctx.render(homeTemplate(todayInfo, weekInfo, unit));
+    ctx.render(homeTemplate(info, unit));
     document.getElementById("inputBox").value = '';
 
 }

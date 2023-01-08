@@ -3,7 +3,9 @@
 const dayImg = ['0', '1', '2', '3','45', '48', '51_56_61_66_80', '53_63_81', '55_57_65_67_82', '71_85', '73', '75_86', '77','95_96_99']
 const nightImg = ['0n', '1n', '2n', '3n','45n', '48n', '51n_56n_61n_66n_80n', '53n_63n_81n', '55n_57n_65n_67n_82n', '71n_85n', '73n', '77n', '75n_86n', '95n_96n_99n']
 
-export function today(data){
+export function infoFunc(data){
+
+    console.log(data)
 
     const year = new Date().getFullYear();
     let month = String(new Date().getMonth() + 1);
@@ -25,7 +27,6 @@ export function today(data){
    
     const timeNow = (year + '-' + month + '-' + day + 'T' + hours + ':' + '00');
 
-
     const index = data.hourly.time.indexOf(timeNow);
 
     const entriesArray = Object.entries(data.hourly);
@@ -37,29 +38,26 @@ export function today(data){
             hour[arr[0]] = arr[1][i];
         });
         hour.img = (Number(hours) < Number(sunset)) ? dayImg.find(el => el.includes(hour.weathercode)) :  nightImg.find(el => el.includes(hour.weathercode));
-     
         hoursInfo.push(hour);
     }
 
-console.log(hoursInfo);
-    return hoursInfo
+const dailyArrays = (Object.entries(data.daily));
+const weekInfo = [];
+
+for(let i = 0; i < 7; i++){
+    const day = {};
+   dailyArrays.forEach(arr => {
+        day[arr[0]] = arr[1][i];
+    });
+
+    day.img = dayImg.find(el => el.includes(day.weathercode));
+    weekInfo.push(day);
 }
 
-
-export function week(data){
-    const dailyArrays = (Object.values(data.daily));
-    const daysInfo = [];
-    for (let i = 0; i < 7; i++ ){
-        let day = {};
-        day.time = dailyArrays[0][i];
-        day.code = dailyArrays[1][i];
-        day.max = dailyArrays[2][i];
-        day.min = dailyArrays[3][i];
-        day.img = dayImg.find(el => el.includes(day.code));
-        daysInfo.push(day);
-    }
-
-    console.log(daysInfo)
-   
-    return daysInfo
+const info = {
+    hoursInfo: hoursInfo,
+    weekInfo: weekInfo
 }
+    return info
+}
+

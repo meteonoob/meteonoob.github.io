@@ -11,6 +11,15 @@ import {  showOptions } from "./view/datalist.js";
 import { welcomeView } from "./view/welcomeView.js";
 import { getNearCity } from "./api/data.js";
 
+ const successCallback = (position) => {
+  getPosition(position);
+};
+ const errorCallback = (error) => {
+  console.log(error);
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
 const main = document.getElementsByTagName('main')[0];
 
 const inputBox = document.getElementById("inputBox");
@@ -23,18 +32,15 @@ btn.addEventListener('click', search)
 
 function search (e){    
     const input = (inputBox.value);
-    inputBox.value = 'Loading...';
-    
+   
     if(input.split(" - ").length == 4){
     setTimeout(() => {page.redirect(`/${input}`)}, 2000);
-   
     }
     inputBox.value = "Loading..."
 }
 
 function ctxDecorator(ctx, next){
     ctx.render = (content) => render(content, main);
-
     next();
 }
 
@@ -44,27 +50,15 @@ page("/index.html","/");
 page("/", welcomeView);
 page("/home", homeView );
 page("/:city", cityView)
-
 page.start();
 
-
-
-
-console.log("ok");
-
-export const successCallback = (position) => {
-    getPosition(position);
-  };
-  export const errorCallback = (error) => {
-    console.log(error);
-  };
-
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-  
+ 
   
      async function getPosition(position) {
       const lat = ((position.coords.latitude).toFixed(6));
       let lon = ((position.coords.longitude).toFixed(6));
+      sessionStorage.setItem("lat", lat );
+      sessionStorage.setItem("lon", lon ); 
      
       if (!isNaN(lon[0])){
          lon = `+${lon}`
@@ -72,11 +66,7 @@ export const successCallback = (position) => {
   
       const result = await getNearCity(lat, lon);
       const myCity = (result.data[0]);
-  
-      const cityString = `${myCity.name} - ${myCity.region} - ${myCity.country} - ${myCity.wikiDataId}`;
-  
-      sessionStorage.setItem("lat", lat );
-      sessionStorage.setItem("lon", lon ); 
+      const cityString = `${myCity.name} - ${myCity.region} - ${myCity.country}`;
       sessionStorage.setItem("location", cityString)
   
       page.redirect("/home")

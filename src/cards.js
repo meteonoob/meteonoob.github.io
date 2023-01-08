@@ -40,9 +40,6 @@ const meteoEnum = {
 
 export function todayCardTemplate(obj, unit) {
 
- 
-
-
   return html`
               <div class="card" id="today" >
               
@@ -72,6 +69,7 @@ export function todayCardTemplate(obj, unit) {
 
 export function cardTemplate(obj, unit){
 
+
     return html`
           <div class="card" id="week">
 
@@ -82,13 +80,17 @@ export function cardTemplate(obj, unit){
             </p>
 
             <p>
-                 <span class="max">${Math.round(obj.min)}/${Math.round(obj.max)}${unit}</span>
+                 <span class="max">${Math.round(obj.temperature_2m_min)}/${Math.round(obj.temperature_2m_max)}${unit}</span>
             </p>
-            <p class="meteo">${meteoEnum[`${obj.code}`]}</p>
+            <p class="meteo">${meteoEnum[`${obj.weathercode}`]}</p>
          </div>`
 }
 
-export function homeTemplate(todayInfo, daysInfo, unit) {
+export function homeTemplate(info, unit) {
+
+  const todayInfo = info.hoursInfo;
+  const weekInfo = info.weekInfo;
+
   return html`
 
   <div id="todayboard" >
@@ -96,7 +98,7 @@ export function homeTemplate(todayInfo, daysInfo, unit) {
   </div>
   
   <div id="dashboard">
-          ${daysInfo.map(day => day = cardTemplate(day, unit))}
+          ${weekInfo.map(day => day = cardTemplate(day, unit))}
   </div>
   
   `
