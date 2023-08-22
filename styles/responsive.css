@@ -14,5 +14,51 @@
        width:100%;
       }
 
+      .form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .input {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      #inputBtn {
+        width: 60%;
+      }
+
+
+}
+
+
+@media (max-width: 620px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 0.4rem 1rem;
+    }
+
+    .img-container {
+        width:8rem;
+        height: 8rem;
+        padding: 0.4rem;
+        margin-right: auto;
+        align-self: center;
+      }
+
+      .form {
+        font-size: 1.2rem;
+      }
+
+      .input {
+        padding: 0.4rem 0.8rem;
+      }
+
+
+
 
 }

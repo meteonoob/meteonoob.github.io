@@ -48,12 +48,13 @@ export function todayCardTemplate(obj, unit) {
               </div>
 
               <div class="info-container">
-                <p class="date">Now</p>
+         
 
-                <p class="meteo">${meteoEnum[`${obj[0].weathercode}`]}</p>
-              
                 <p>
-                <strong>Temperature:</strong> <span class="max">${Math.round(obj[0].temperature_2m)}${unit}</span>
+                <span>${meteoEnum[`${obj[0].weathercode}`]}</span> 
+                </p>
+                <p>
+                <strong>Temperature: </strong> <span class="max">${Math.round(obj[0].temperature_2m)}${unit}</span>
                 </p>
                 <p>
                 <strong>Apparent: ${Math.round(obj[0].apparent_temperature)}${unit}</strong> 
@@ -75,20 +76,23 @@ export function cardTemplate(obj, unit){
 
     return html`
           <div class="card" id="week">
-           <div class="img-container">
-            <img src="/images/${obj.img}.gif" alt="o" />
-            </div>
+
 
             <div class="info-container">
+            <p> ${obj.time} </p>
             <p class="date">
-              <strong>${daysOfWeek[new Date(obj.time).getDay()]} ${obj.time}</strong>
+              <strong>${daysOfWeek[new Date(obj.time).getDay()]}</strong>
             </p>
-
             <p>
                  <span class="max">${Math.round(obj.temperature_2m_min)}/${Math.round(obj.temperature_2m_max)}${unit}</span>
             </p>
             <p class="meteo">${meteoEnum[`${obj.weathercode}`]}</p>
             </div>
+
+            <div class="img-container">
+            <img src="/images/${obj.img}.gif" alt="o" />
+            </div>
+            
          </div>`
 }
 
