@@ -16,7 +16,7 @@
 }
 
 html {
-  width: 100vw;
+  max-width: 100vw;
   box-sizing: border-box;
   font-family: PT Sans, sans-serif;
   font-size: 16px;
@@ -28,7 +28,7 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
 
     background-color:black;
@@ -44,7 +44,8 @@ html {
   main {
     width:100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 1rem 2rem;
     flex-wrap: wrap;
     flex: 0 1 auto;
     
@@ -52,19 +53,18 @@ html {
 
   .today-container{
 
-    width: 40%;
+    width: 45%;
 
   }
 
   .week-container{
-
-   width:40%;
+   width:45%;
    
   }
 
   .card {
     display: flex;
-    justify-content: space-evenly;
+    margin-bottom: 2rem;
  
     color: rgb(255, 255, 255);
     border: 2px;
@@ -79,6 +79,13 @@ html {
     width:10rem;
     height: 10rem;
     padding: 1rem;
+    margin-right: auto;
+
+  }
+
+  .info-container {
+    width:60%;
+    margin-left: auto;
   }
 
   .card img {
@@ -112,12 +119,12 @@ html {
   } */
   
   p {
-    text-align:left;
+
     font-size:xx-large;
     font-family:monospace;
   }
   p span {
-    
+    display:block;
     font-size: 50px;
     font-weight: 800;
     font-stretch: condensed;
