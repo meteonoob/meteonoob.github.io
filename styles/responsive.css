@@ -1,0 +1,18 @@
+@media (max-width: 1300px) {
+
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .today-container{
+        width: 80%;
+      }
+    
+      .week-container{
+       width:80%;
+      }
+
+
+}

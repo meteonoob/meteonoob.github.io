@@ -43,8 +43,11 @@ export function todayCardTemplate(obj, unit) {
   return html`
               <div class="card" id="today" >
               
+              <div class="img-container">
                 <img  src="/images/${obj[0].img}.gif" alt="o" />
-              
+              </div>
+
+              <div class="info-container">
                 <p class="date">Now</p>
 
                 <p class="meteo">${meteoEnum[`${obj[0].weathercode}`]}</p>
@@ -61,7 +64,7 @@ export function todayCardTemplate(obj, unit) {
                 <p>
                 <strong>Windspeed: ${(obj[0].windspeed_10m)}m/s</strong> 
                 </p>
-              
+              </div>
               </div>`
 }
 
@@ -72,9 +75,11 @@ export function cardTemplate(obj, unit){
 
     return html`
           <div class="card" id="week">
+           <div class="img-container">
+            <img src="/images/${obj.img}.gif" alt="o" />
+            </div>
 
-          <img src="/images/${obj.img}.gif" alt="o" />
-
+            <div class="info-container">
             <p class="date">
               <strong>${daysOfWeek[new Date(obj.time).getDay()]} ${obj.time}</strong>
             </p>
@@ -83,6 +88,7 @@ export function cardTemplate(obj, unit){
                  <span class="max">${Math.round(obj.temperature_2m_min)}/${Math.round(obj.temperature_2m_max)}${unit}</span>
             </p>
             <p class="meteo">${meteoEnum[`${obj.weathercode}`]}</p>
+            </div>
          </div>`
 }
 
@@ -93,11 +99,11 @@ export function homeTemplate(info, unit) {
 
   return html`
 
-  <div id="todayboard" >
+  <div class="today-container" >
        ${todayCardTemplate(todayInfo, unit)}
   </div>
   
-  <div id="dashboard">
+  <div class="week-container">
           ${weekInfo.map(day => day = cardTemplate(day, unit))}
   </div>
   
