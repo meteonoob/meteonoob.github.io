@@ -24,9 +24,6 @@ To start using MeteoNoob, simply visit the website https://github.com/meteonoob/
 
 If you'd like to contribute to the development of MeteoNoob, simply fork the repository and make your changes. Then, create a pull request and I will review and merge it. Your contribution is greatly appreciated!
 
-## Screenshots
-
-Here are some screenshots showcasing the features of MeteoNoob:
 
 ## License
 
