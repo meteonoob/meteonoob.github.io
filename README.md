@@ -2,6 +2,10 @@
 
 MeteoNoob is a weather forecasting platform designed to provide real-time weather information to its users. With a user-friendly interface and accurate data, you can stay ahead of the weather patterns and plan your day accordingly.
 
+![mockup](https://github.com/meteonoob/meteonoob.github.io/blob/main/images/meteonoob.jpg?raw=true)
+
+## You can access the deployed application [here](https://meteonoob.github.io).
+
 ## Features
 - Real-time weather updates
 - 7-day forecast
@@ -16,9 +20,6 @@ In the development of MeteoNoob, the following APIs and libraries were used:
 - [lit-html](https://lit-html.polymer-project.org/) for templating
 - [page.js](https://visionmedia.github.io/page.js/) for routing
 
-## Getting Started
-
-To start using MeteoNoob, simply visit the website https://github.com/meteonoob/meteonoob.github.io and enter your desired location. The platform will then provide you with the current weather and a 7-day forecast.
 
 ## How to Contribute
 
